@@ -7,9 +7,7 @@
   --main-transition: all 0.2s ease-out;
 }
 
-html,
-input,
-button {
+* {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -17,6 +15,10 @@ button {
 body {
   height: 98vh;
   background-color: var(--main-background-color);
+}
+
+body,
+div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,10 +26,6 @@ body {
 }
 
 div {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
   width: clamp(250px, 50vw, 600px);
 }
 
