@@ -1,0 +1,105 @@
+:root {
+  --main-background-color: rgb(241, 240, 227);
+  --element-padding: 1rem;
+  --main-border-color: rgba(0, 0, 0, 0.25);
+  --main-border: 1px solid var(--main-border-color);
+  --font-size: 1rem;
+  --main-transition: all 0.2s ease-out;
+}
+
+html,
+input,
+button {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 98vh;
+  background-color: var(--main-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(250px, 50vw, 600px);
+}
+
+input,
+button,
+p {
+  font-size: var(--font-size);
+  padding: var(--element-padding);
+  margin: 10px;
+  background-color: var(--main-background-color);
+  border: none;
+  text-align: center;
+}
+
+p {
+  opacity: 0;
+}
+
+input {
+  border-bottom: var(--main-border);
+  width: clamp(100px, 20%, 600px);
+  transition: var(--main-transition);
+}
+
+input:focus {
+  width: 80%;
+}
+
+button {
+  border-radius: 5px;
+  position: relative;
+  transition: var(--main-transition);
+}
+
+button:active {
+  color: var(--main-border-color);
+}
+
+input:focus,
+button:focus {
+  outline: transparent;
+}
+
+button::after {
+  position: absolute;
+  content: "";
+  top: 80%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-border-color);
+  height: 1px;
+  width: 0%;
+  transition: var(--main-transition);
+}
+
+button:hover::after {
+  width: 95%;
+}
+
+button:active::after {
+  transition: width 0.05s ease;
+  width: 85%;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input::selection,
+p::selection,
+button::selection {
+  color: var(--main-background-color);
+  background-color: black;
+}
