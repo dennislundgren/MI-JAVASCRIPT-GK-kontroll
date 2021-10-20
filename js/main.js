@@ -1,43 +1,40 @@
 let y = []; // Deklarera array
 let sum = 0; // Deklarera summa
 
-// Kör nödvändig kod då sidan laddas.
-function start() {
-  // Hämtar input från HTML via id.
-  let input = document.getElementById("control-number");
+// Hämtar input från HTML via id.
+let input = document.getElementById("control-number");
 
-  // Hämtar knaoo från HTML via id.
-  let btn = document.getElementById("btn");
+// Hämtar knaoo från HTML via id.
+let btn = document.getElementById("btn");
 
-  // Funktion för nedtryck på enter då man är i input-fältet.
-  input.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
+// Funktion för nedtryck på enter då man är i input-fältet.
+input.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
 
-      // Ändrar lite design vid nedtryck av enterknapp.
-      btn.style.transition = "all 0.05s ease";
-      btn.style.color = "var(--main-border-color)";
-      input.style.transition = "all 0.05s ease";
-      input.style.width = "70%";
-    }
-  });
+    // Ändrar lite design vid nedtryck av enterknapp.
+    btn.style.transition = "all 0.05s ease";
+    btn.style.color = "var(--main-border-color)";
+    input.style.transition = "all 0.05s ease";
+    input.style.width = "70%";
+  }
+});
 
-  // Funktion då enter släpps när man är i input-fältet.
-  input.addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
+// Funktion då enter släpps när man är i input-fältet.
+input.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
 
-      // Kör igång nedan calculate()-funktion.
-      btn.click();
+    // Kör igång nedan calculate()-funktion.
+    btn.click();
 
-      // Återställer design då enter-knappen släpps..
-      btn.style.transition = "";
-      btn.style.color = "";
-      input.style.transition = "";
-      input.style.width = "";
-    }
-  });
-}
+    // Återställer design då enter-knappen släpps..
+    btn.style.transition = "";
+    btn.style.color = "";
+    input.style.transition = "";
+    input.style.width = "";
+  }
+});
 
 // Funktion som körs vid knapp-tryck.
 function calculate() {
