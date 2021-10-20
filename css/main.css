@@ -3,7 +3,7 @@
   --element-padding: 1rem;
   --main-border-color: rgba(0, 0, 0, 0.25);
   --main-border: 1px solid var(--main-border-color);
-  --font-size: 1rem;
+  --font-size: clamp(1rem, 2vw, 1.2rem);
   --main-transition: all 0.2s ease-out;
 }
 
@@ -26,7 +26,7 @@ div {
 }
 
 div {
-  width: clamp(250px, 50vw, 600px);
+  width: clamp(270px, 50vw, 600px);
 }
 
 input,
