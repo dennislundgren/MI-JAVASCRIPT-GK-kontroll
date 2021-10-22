@@ -3,7 +3,7 @@
   --element-padding: 1rem;
   --main-border-color: rgba(0, 0, 0, 0.25);
   --main-border: 1px solid var(--main-border-color);
-  --font-size: clamp(1rem, 2vw, 1.2rem);
+  --font-size: clamp(1rem, 2vw, 1.25rem);
   --main-transition: all 0.2s ease-out;
 }
 
@@ -40,8 +40,11 @@ p {
   text-align: center;
 }
 
-p {
-  opacity: 0;
+input::selection,
+p::selection,
+button::selection {
+  color: var(--main-background-color);
+  background-color: black;
 }
 
 input {
@@ -60,15 +63,6 @@ button {
   transition: var(--main-transition);
 }
 
-button:active {
-  color: var(--main-border-color);
-}
-
-input:focus,
-button:focus {
-  outline: transparent;
-}
-
 button::after {
   position: absolute;
   content: "";
@@ -82,8 +76,16 @@ button::after {
   transition: var(--main-transition);
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 button:hover::after {
   width: 95%;
+}
+
+button:active {
+  color: var(--main-border-color);
 }
 
 button:active::after {
@@ -91,13 +93,11 @@ button:active::after {
   width: 85%;
 }
 
-button:hover {
-  cursor: pointer;
+input:focus,
+button:focus {
+  outline: transparent;
 }
 
-input::selection,
-p::selection,
-button::selection {
-  color: var(--main-background-color);
-  background-color: black;
+p {
+  opacity: 0;
 }

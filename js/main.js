@@ -2,10 +2,10 @@ let y = []; // Deklarera array
 let sum = 0; // Deklarera summa
 
 // Hämtar input från HTML via id.
-let input = document.getElementById("control-number");
+let input = document.querySelector("input");
 
-// Hämtar knaoo från HTML via id.
-let btn = document.getElementById("btn");
+// Hämtar knapp från HTML via id.
+let btn = document.querySelector("button");
 
 // Funktion för nedtryck på enter då man är i input-fältet.
 input.addEventListener("keydown", function (event) {
@@ -36,13 +36,15 @@ input.addEventListener("keyup", function (event) {
   }
 });
 
+btn.addEventListener("click", calculate);
+
 // Funktion som körs vid knapp-tryck.
 function calculate() {
   // Hämtar värde från input.
-  let birthdate = document.getElementById("control-number").value;
+  let birthdate = input.value;
 
   // Deklarerar personnummer.
-  let ssn = document.getElementById("ssn");
+  let ssn = document.querySelector("p");
 
   // Boolean på längden för inskrivet värde.
   let validateLength = Boolean(birthdate.length != 9);
@@ -71,7 +73,7 @@ function calculate() {
       console.log("Värdet som beräknas:", birthdate[i]);
 
       // En ekvation som multiplicerar vartannat värde utifrån vart vi är i loopen.
-      // Tack Elias Fredriksson för ekvation.
+      // Tack Elias Fredriksson för ekvation. (x * 2 - (y % 2))
       // Denna sparas sedan i en variabel x.
       let x = birthdate[i] * (2 - (i % 2));
 
